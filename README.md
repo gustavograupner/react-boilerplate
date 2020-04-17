@@ -12,6 +12,5 @@
 ## Dependencies 
 - [React 16.3.1](https://reactjs.org/docs/getting-started.html)
 - [TypeScript 3.7.2](https://www.typescriptlang.org/docs/home.html)
-- [styled-components 5.1.0](https://styled-components.com/docs)
 - [React Router 5.1.2](https://reacttraining.com/react-router/web/guides/quick-start)
 - [Lib Sass 4.13.1](https://github.com/sass/libsass)
