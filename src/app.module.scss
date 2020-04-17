@@ -1,0 +1,116 @@
+@import './assets/scss/colors.scss';
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: 'normal';
+  font-weight: 500;
+  src: 
+    local('Roboto Regular'), 
+    url(./assets/font/Roboto-Regular.ttf) 
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: 'normal';
+  font-weight: 700;
+  src: 
+    local('Roboto Bold'), 
+    url(./assets/font/Roboto-Bold.ttf) 
+    format('truetype');
+}
+
+$sideBarWidth: 200px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.appHeader {
+  background-color: $normalColor;
+  height: 65px;
+  display: flex;
+  background: $normalColor 0% 0% no-repeat padding-box;
+}
+
+.appLogo {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  justify-content: space-evenly;
+  background-color: $sideBarColor;
+  width: $sideBarWidth;
+}
+
+.appLogo > span {
+  margin: -12px 0px -5px 60px;
+  font-size: 13px;
+  color: $secondaryText;
+}
+
+.appBody {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.appMenu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: $sideBarWidth;
+  min-width: 180px;
+  background: $normalColor 0% 0% no-repeat padding-box;
+  background-color: $sideBarColor;
+}
+
+.appNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.appNav li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appNav li.active {
+  background-color: $primaryColor;
+  color: $primaryText;
+}
+
+.appNav li:hover {
+  background-color: $primaryColor;
+  color: $primaryText;
+  cursor: pointer;
+}
+
+.appContent {
+  flex:1;
+  padding: 10px;
+  background: $primaryBorder 0% 0% no-repeat padding-box;
+  box-shadow: inset 3px 3px 4px -4px rgba(0,0,0,0.47);
+}
