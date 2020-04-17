@@ -1,10 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import routes from '../constants/routes';
+import OperationService from '../services/operation.service';
 
 const ListOperation = () => {
 
   const history = useHistory();
+  const operationService = new OperationService();
+
+  useEffect(() => {
+    operationService.listOperations();
+  }, [operationService])
 
   const handleEditOperation = useCallback(
     () => {

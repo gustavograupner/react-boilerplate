@@ -1,33 +1,7 @@
 @import './assets/scss/colors.scss';
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: 'normal';
-  font-weight: 500;
-  src: 
-    local('Roboto Regular'), 
-    url(./assets/font/Roboto-Regular.ttf) 
-    format('truetype');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: 'normal';
-  font-weight: 700;
-  src: 
-    local('Roboto Bold'), 
-    url(./assets/font/Roboto-Bold.ttf) 
-    format('truetype');
-}
-
-$sideBarWidth: 200px;
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto";
-}
+$sideBarWidth: 220px;
+$sideBarMinWidth: 180px;
 
 a:link, a:visited, a:hover, a:active {
   color: inherit;
@@ -53,7 +27,9 @@ a:link, a:visited, a:hover, a:active {
   pointer-events: none;
   justify-content: space-evenly;
   background-color: $sideBarColor;
+  color:white;
   width: $sideBarWidth;
+  min-width: $sideBarMinWidth;
 }
 
 .appLogo > span {
@@ -73,7 +49,7 @@ a:link, a:visited, a:hover, a:active {
   align-items: flex-start;
   justify-content: center;
   width: $sideBarWidth;
-  min-width: 180px;
+  min-width: $sideBarMinWidth;
   background: $normalColor 0% 0% no-repeat padding-box;
   background-color: $sideBarColor;
 }
@@ -97,14 +73,18 @@ ul {
   align-items: center;
 }
 
+.appNav li {
+  color: $sideBarItemColor;
+}
+
 .appNav li.active {
-  background-color: $primaryColor;
-  color: $primaryText;
+  background-color: $sideBarItemActive;
+  color: $sideBarItemActiveColor;
 }
 
 .appNav li:hover {
-  background-color: $primaryColor;
-  color: $primaryText;
+  background-color: $sideBarItemHover;
+  color: $sideBarItemHoverColor;
   cursor: pointer;
 }
 
