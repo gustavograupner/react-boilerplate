@@ -1,0 +1,45 @@
+@import '../../colors.scss';
+
+$tabBorder: 1px solid $secondaryBorder;
+
+.tabContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.tab {
+	background-color: $normalColor;
+	border-left: $tabBorder;
+	border-top: $tabBorder;
+	border-right: $tabBorder;
+	border-bottom: $tabBorder;
+	border-radius: 4px 4px 0 0;
+	font-weight: 500;
+	color: $thirdText;
+	padding: 12px 31px;
+	min-width: 200px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 1em;
+}
+
+.tabContent {
+	background-color: $normalColor;
+  	border: $tabBorder;
+	margin-top: -1px;
+	min-height: calc(100% - 170px);
+	padding: 15px;
+}
+
+.selected {
+	border: 1px solid $secondaryColor;
+	border-bottom: none;
+}
+
+.complete {
+	color: $primaryText;
+	background-color: $secondaryColor;
+	border-bottom: 1px solid $secondaryColor;
+}

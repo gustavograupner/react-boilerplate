@@ -1,0 +1,34 @@
+@import '../../colors.scss';
+
+.paginationContainer {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	padding: 8px;
+}
+
+.pagination {
+	display: flex;
+	height: 30px;
+
+	> div {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $normalText;
+		width: 30px;
+		cursor: pointer;
+	}
+
+	.selected {
+		background-color: $secondaryBorder;
+		color: $normalColor;
+		border-radius: 4px;
+	}
+}
+
+.pageRows {
+	position: absolute;
+	flex: 1;
+}

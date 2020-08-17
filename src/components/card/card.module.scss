@@ -1,0 +1,12 @@
+@import "../../colors.scss";
+
+.card {
+}
+
+.cardBorder {
+  border: 1px solid $secondaryBorder;
+}
+
+.cardBackground {
+  background-color: $normalColor;
+}

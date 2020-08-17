@@ -1,0 +1,125 @@
+@import '../../colors.scss';
+
+.tableContainer {
+  overflow: auto;
+}
+
+.table {
+  background: $normalColor;
+  border-spacing: 0px;
+  width: 100%;
+  margin: 8px auto;
+  position: relative;
+  overflow-x: auto;
+
+  * {
+    position: relative;
+  }
+
+  thead tr th {
+    height: 40px;
+    font-weight: 500;
+    color: $normalText;
+  }
+
+  thead tr .description {
+    background: $normalColor;  
+  }
+
+  tbody tr {
+    height: 35px;
+  }
+
+  td, th {
+    text-align: left;
+  }
+
+  td.l, th.l {
+    text-align: right;
+  }
+
+  td.c, th.c {
+    text-align: center;
+  }
+
+  td.r, th.r {
+    text-align: center;
+  }
+
+  /* BORDERS  */
+  td, th {
+    padding: 2px 8px;
+    font-size: 0.9em;
+    border-right: solid 1px $secondaryBorder;  
+    border-bottom: solid 1px $secondaryBorder;  
+  }
+
+  tr:first-child th {
+    border-top: solid 1px $secondaryBorder;
+  }
+
+  tr th:first-child, tr td:first-child {
+    border-left: solid 1px $secondaryBorder;
+  }
+
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 4px;
+  }
+
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 4px;
+  }
+
+  tr:first-child th:first-child {
+    border-top-left-radius: 4px;
+  }
+
+  tr:first-child th:last-child {
+    border-top-right-radius: 4px;
+  }
+}
+
+.tbody {
+  tr:nth-child(even) {
+    background-color: $normalColor;
+  }
+
+  tr:hover {
+    background-color: $normalColor;
+  }
+}
+
+.searchFieldContainer { 
+	border: 1px solid $secondaryBorder;
+	border-radius: 4px;
+	display: flex;
+	flex: 1;
+	padding: 5px;
+}
+
+.searchField {
+	border: none;
+	outline: none;
+	padding-left: 3px;
+  width: calc(100% - 25px);
+}
+
+.searchIcon {
+	color: $secondaryText;
+}
+
+.removeCell {
+  color: $primaryColor;
+  cursor: pointer;
+}
+
+.editCell {
+  color: $thirdText;
+  cursor: pointer;
+}
+
+.actionCell {
+  text-decoration: underline;
+  cursor: pointer;
+  color: $secondaryText;
+}

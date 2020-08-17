@@ -1,0 +1,17 @@
+@import '../../colors.scss';
+
+.cardRow {
+	background-color: $normalColor;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 5px 0;
+}
+
+.cardRowBorder {
+	border: 1px solid $secondaryBorder;
+}
+
+.cardRowTransparent {
+	background: none;
+}

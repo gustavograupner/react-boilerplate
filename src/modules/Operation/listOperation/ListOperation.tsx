@@ -1,34 +1,90 @@
-import React, { useCallback, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
-import routes from '../constants/routes';
-import OperationService from '../services/operation.service';
+import React from "react";
+import {
+  Button,
+  Card,
+  TextField,
+  CardRow,
+  Tab,
+  CardColumn,
+  DropdownField,
+  DatePickerField,
+  Checkbox
+} from "../../../components";
+import formFields from "./formFields";
+import useListOperation from "./useListOperation";
 
 const ListOperation = () => {
+  const {
+    formState,
+    generos,
+    handleEditOperation,
+    handleEventChange
+  } = useListOperation();
 
-  const history = useHistory();
-  const operationService = new OperationService();
-
-  useEffect(() => {
-    operationService.listOperations();
-  }, [operationService])
-
-  const handleEditOperation = useCallback(
-    () => {
-      history.push({
-        pathname: routes.EDIT_OPERATION, 
-        state: { operationCode: '1' }
-      })
-    }, [history]
+  const renderTextField = () => (
+    <Card>
+      <CardColumn>
+        <CardRow>
+          <TextField
+            label="Código"
+            name={formFields.CODIGO}
+            value={formState[formFields.CODIGO]}
+            onChange={handleEventChange}
+          />
+          <TextField
+            label="Nome"
+            name={formFields.NOME}
+            value={formState[formFields.NOME]}
+            onChange={handleEventChange}
+          />
+          <TextField
+            label="Endereço"
+            name={formFields.ENDERECO}
+            value={formState[formFields.ENDERECO]}
+            onChange={handleEventChange}
+          />
+        </CardRow>
+        <CardRow>
+          <DropdownField
+            name={formFields.GENERO}
+            options={generos}
+            valueField="codigoGenero"
+            labelField="descricaoGenero"
+            label="Gênero"
+            value={formState[formFields.GENERO]}
+            onChange={handleEventChange}
+          />
+          <DatePickerField
+            name={formFields.DATA_SELECIONADA}
+            label={"Data selecionada"}
+            value={formState[formFields.DATA_SELECIONADA]}
+            onChange={handleEventChange}
+          />
+          <Checkbox
+            name={formFields.CHECKBOX}
+            label="Checkbox para teste"
+            checked={formState[formFields.CHECKBOX]}
+            onCheck={handleEventChange}
+          />
+        </CardRow>
+      </CardColumn>
+    </Card>
   );
+
+  const renderTabs = () => [
+    {
+      index: 1,
+      description: "TextField",
+      component: renderTextField
+    }
+  ];
 
   return (
     <>
-      <h5>Operação</h5>
-      <button onClick={handleEditOperation}>
-        Editar Operação
-      </button>
+      <Button confirm label="Editar Operação" onClick={handleEditOperation} />
+      <Tab tabs={renderTabs()} selectedTabIndex={1}></Tab>;
     </>
-  )
-}
+  );
+};
 
 export default ListOperation;

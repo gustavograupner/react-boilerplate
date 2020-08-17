@@ -1,0 +1,17 @@
+@import '../../colors.scss';
+
+.checkbox {
+  align-items: flex-end;
+  display: flex;
+  margin: 5px;
+
+  .input {
+    margin: 0;
+  }
+
+  .span {
+    padding-left: 5px;
+    font-size: 14px;
+    color: $normalText;
+  }
+}

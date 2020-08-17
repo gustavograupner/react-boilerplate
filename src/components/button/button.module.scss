@@ -1,0 +1,40 @@
+@import '../../colors.scss';
+
+.button {
+	border: 0;
+	padding: 10px 0;
+	border-radius: 60px;
+	outline: none;
+	width: 120px;
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.confirmButton {
+	background-color: $secondaryColor;
+	color: $normalColor;
+}
+
+.neutralButton {
+	background-color: $primaryColor;
+	color: $normalColor;
+}
+
+.removeButton {
+	background-color: $primaryColor;
+	color: $primaryText;
+}
+
+.disabledButton {
+	background-color: #ccc;
+	color: #eee;
+	cursor: not-allowed;
+}
+
+.roundButton {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	/*font-size: 18px;*/
+	font-weight: 500;
+}

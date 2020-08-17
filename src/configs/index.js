@@ -1,18 +1,10 @@
-let config;
+const config = {
+  api: {
+    host: process.env.REACT_APP_BASE_URL,
+    timeout: 20000,
+  },
+};
 
-switch (process.env.NODE_ENV) {
-	case 'dev':
-    config = require('./config.devel');
-    break;
-  case 'homol':
-    config = require('./config.homol');
-    break;
-  case 'prod':
-    config = require('./config.prod');
-    break;
-	default:
-    config = require('./config.devel');
-		break;
-}
+const API_HOST = config.api.host;
 
-export default config;
+export {API_HOST};

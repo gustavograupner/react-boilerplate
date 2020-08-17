@@ -1,0 +1,145 @@
+@import '../../colors.scss';
+
+.dropdownContainer {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.dropdown {
+  color: $normalText !important;
+  margin-top: 8px;
+  outline: none;
+}
+
+.dropdownControl {
+  color: $normalText !important;
+  border: 1px solid $secondaryBorder !important;
+  border-radius: 4px !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdownOuterList {
+  height: 100vh;
+  width: 100vw;
+  background-color: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.dropdownContainer {
+  position: relative;
+  flex: 1;
+}
+
+.dropdownList {
+  background-color: $normalColor;
+  border: 1px solid $secondaryBorder;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -3px;
+  max-height: 250px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.dropdownOption {
+  box-sizing: border-box;
+  color: $normalText;
+  font-size: 12px;
+  display: block;
+  padding: 5px 7px;
+  border-bottom: solid 2px $primaryBorder;
+  cursor: pointer;
+}
+
+.dropdownOptionSelected{
+  box-sizing: border-box;
+  color: $normalText;
+  font-size: 12px;
+  display: block;
+  padding: 5px 7px;
+  border-bottom: solid 2px $primaryBorder;
+  background-color: $primaryBorder;
+}
+
+.dropdownOptionSelected > svg {
+  color: #B11F24;
+  position: absolute;
+  right: 4px;
+  left: unset !important;
+  top: unset !important;
+  cursor: pointer;
+}
+
+.dropdownOption:hover {
+  background-color: $primaryBorder;
+  color: $normalText;
+}
+
+.dropdownContainer svg {
+  color: $secondaryText;
+  left: 5px;
+  top: 6px;
+}
+
+.dropdownSelectionContainer {
+  border: 1px solid $secondaryBorder;
+  border-radius: 4px;
+  color: $normalText;
+  margin-top: 8px;
+  height: 39px;
+  padding: 8px 28px 8px 5px;
+  outline: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $normalColor;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dropdownArrow {
+  position: absolute;
+  right: -3px;
+  top: 26px;
+  width: 28px;
+  height: 24px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #999 50%),
+    linear-gradient(135deg, #999 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.searchFieldContainer { 
+	border: 1px solid $secondaryBorder;
+	border-radius: 4px;
+	display: flex;
+	flex: 1;
+	padding: 5px;
+}
+
+.searchIcon {
+	color: $secondaryText;
+}
+
+.searchField {
+	border: none;
+	outline: none;
+	padding-left: 3px;
+  width: calc(100% - 25px);
+}

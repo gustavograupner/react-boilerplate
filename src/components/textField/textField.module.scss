@@ -1,0 +1,17 @@
+@import "../../colors.scss";
+
+.textFieldContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 5px;
+
+  > input {
+    border: 1px solid $secondaryBorder;
+    border-radius: 4px;
+    color: $normalText;
+    margin-top: 8px;
+    padding: 11px 5px;
+    outline: none;
+  }
+}

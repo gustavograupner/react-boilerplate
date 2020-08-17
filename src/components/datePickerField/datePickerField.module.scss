@@ -1,0 +1,50 @@
+@import '../../colors.scss';
+
+.datePickerContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.datePickerField {
+	border: 1px solid $secondaryBorder;
+	border-radius: 4px;
+	color: $primaryText;
+	margin-top: 8px;
+	padding: 5px;
+  outline: none;
+
+  > div {
+    border: 0;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+input, span, button {
+  color: $normalText;
+  outline: none;
+}
+
+.datePickerWrapper {
+  display: flex;
+  flex: 1;
+  border: 1px solid $secondaryBorder !important;
+  border-radius: 4px !important;
+  padding: 4px;
+  margin-top: 8px;
+  outline: none;
+  padding: 4px 7px 5px 5px;
+  > div {
+    border: 0;
+  }
+}
+
+.datePickerBottom {
+  margin-bottom: -200px !important;
+}
+
+.datePickerWrapper button {
+  width: 25px;
+}

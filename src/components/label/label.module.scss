@@ -1,0 +1,22 @@
+@import '../../colors.scss';
+
+%default-label-style {
+	font-size: 1em;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: pre-wrap;
+}
+
+.boldLabel {
+	@extend %default-label-style;
+	font-weight: 500;
+}
+
+.neutralLabel {
+	@extend %default-label-style;
+	color: $normalText;
+}
+
+.capitalLabel {
+	text-transform: uppercase;
+}

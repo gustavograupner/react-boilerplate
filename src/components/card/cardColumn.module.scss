@@ -1,0 +1,13 @@
+
+@import '../../colors.scss';
+
+.cardColumn {
+	/* display: flex; */
+	/* flex: 1; */
+	/* flex-direction: column; */
+	padding: 10px;
+}
+
+.cardColumnBorder {
+	border: 1px solid $secondaryBorder;
+}

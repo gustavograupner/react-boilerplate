@@ -1,14 +1,15 @@
-import MainService from './main.service';
+import MainService from "./main.service";
 
-export default class OperationService extends MainService {
-  private path;
-
-  constructor() {
-    super();
-    this.path = '/v1/operation';
-  }
-
-  listOperations = () => {
-    return this.get(`${this.path}/list-operations`);
-  }
+interface OperationInterface {
+  getExample(): void;
 }
+
+export default () => {
+  const publicMethods: OperationInterface = {
+    getExample: () => {
+      return new MainService().get(`/get-example`);
+    }
+  };
+
+  return publicMethods;
+};
