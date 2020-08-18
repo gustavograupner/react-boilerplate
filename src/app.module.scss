@@ -1,7 +1,7 @@
-@import "./assets/scss/colors.scss";
+@import "./colors.scss";
 
 $sideBarWidth: 15vw;
-$sideBarMinWidth: 150px;;
+$sideBarMinWidth: 150px;
 
 a:link,
 a:visited,
@@ -30,7 +30,7 @@ a:active {
   pointer-events: none;
   justify-content: space-evenly;
   background-color: $sideBarColor;
-  color: white;
+  color: $sideBarItemActiveColor;
   width: $sideBarWidth;
   min-width: $sideBarMinWidth;
 }
