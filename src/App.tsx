@@ -15,6 +15,7 @@ import Auth from "./modules/Auth";
 import PrivateRoute from "./navigation/PrivateRoute";
 import InterceptorService from "./services/InterceptorService";
 import { setAuthenticated } from "./libs/localStorage";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const [currentTab, setCurrentTab] = useState("Dashboard");
@@ -28,8 +29,8 @@ const App = () => {
 
   const resetAuth = () => {
     setAuthenticated(false);
-    history.push('/');
-  }
+    history.push("/");
+  };
 
   const handleClick = useCallback(
     (moduleKey: string) => () => {
@@ -87,13 +88,22 @@ const App = () => {
 
   return (
     <HashRouter basename={"#"}>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Switch>
         <Route path={Auth.routeModule.path}>
           <Login />
         </Route>
-        <PrivateRoute path={'/'}>
-          {renderContent()}
-        </PrivateRoute>
+        <PrivateRoute path={"/"}>{renderContent()}</PrivateRoute>
       </Switch>
     </HashRouter>
   );
